@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="TodoList.css">
+</head>
+
+<body>
+    <h2>To Do List</h2>
+    
+    <input type="text" id="task-input" placeholder="Enter a task...">
+    <button id="addbutton" onClick="addListItem()"> Add </button>
+     <ul id="todoList">
+
+         <li>Pay bills</li>
+         <li>Read a book</li>
+         <li>Meet Anna</li>
+         <li>Wash dishes</li>
+        
+    </ul>
+
+    <script>
+        function addListItem() {
+            var li = document.createElement('li');
+            var inputValue = document.getElementById('task-input').value;
+            var t = document.createTextNode(inputValue);
+            
+            li.appendChild(t);
+
+            if (inputValue === ' ') {
+                alert("You must write something!");
+            } else {
+                document.getElementById('todoList').appendChild(li);
+            }
+
+            document.getElementById('task-input').value = "";
+        }
+    </script>
+</body>
+</html>
